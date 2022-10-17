@@ -27,8 +27,3 @@ export const Authenticate = async (usuario) => {
         updateUser(validateUser.id, true)
     }
 }
-
-//verificar si existe el usuario
-
-//si existe, authenticar
-//sino existe, rechazar la authenticacion
