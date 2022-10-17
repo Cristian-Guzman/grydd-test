@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Athentication } from "../organisms/qr-code";
 
 export const Router = () => {
   
@@ -8,9 +9,9 @@ export const Router = () => {
             {/* <NavBar /> */}
             
             <Routes>
-                <Route path="*" element={<Login />} />
-                <Route path="/" element={<Dashboard />} />
-                <Route path="auth" element={<Athentication />} />             
+                <Route path="*" element={<Athentication />} />
+                <Route path="/" element={<Athentication />} />
+                <Route path="auth:id" element={<Athentication />} />             
             </Routes>
             {/* <Footer /> */}
         </BrowserRouter>
