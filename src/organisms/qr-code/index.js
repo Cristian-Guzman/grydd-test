@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormComponent } from '../../molecules/Form'
+import { FormComponent } from '../../molecules/FormQr'
 import { ContainerSC, SubtitleSC, TitleSC } from './styles'
 
 export const Athentication = () => {
