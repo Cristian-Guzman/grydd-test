@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FloatingLabel } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Authenticate, LogAuth } from '../../atoms/Authentication';
 
 export const FormComponent = () => {
   const [user, setUser] = useState('')
@@ -26,19 +26,18 @@ export const FormComponent = () => {
       handleAddres()
   }, [])
   
-  useEffect(() => {
-    console.log(user)
-  }, [user])
+  const handleSubmit = (e) => {
+    Authenticate(user)
+    e.preventDefault(e)
+  }
   
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Usuario</Form.Label>
-        <Form.Control type="email" placeholder="Ingresa tu usuario" onChange={(e) => setUser(e.target.value)} value={user}/>
+        <Form.Control type="text" placeholder="Ingresa tu usuario" onChange={(e) => setUser(e.target.value)} value={user}/>
       </Form.Group>
-      <Form.Group>
-      </Form.Group>
-
+      
       <h4>
         Latitude: {latitude && latitude}
       </h4>
